@@ -48,7 +48,6 @@ function ChainAnimationDemo() {
                 listFromColor = '#4d4d4d'
             />
         </StyledChainAnimationDemo>
-        <div style={{ background: 'red', minHeight: '100vh' }}></div>
     </>);
 }
 
