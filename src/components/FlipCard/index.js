@@ -8,6 +8,7 @@ function FlipCard({
     front   =   <></>,
     back    =   <></>
 }) {
+    
     /** Subfunctions */
     function inverseOpacity(o) {
         return 1 - o;

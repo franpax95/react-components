@@ -5,6 +5,7 @@ import ChainAnimationDemo from './components/ChainAnimation/demo';
 import FlipCardDemo from './components/FlipCard/demo';
 import FlipImageCardDemo from './components/FlipImageCard/demo';
 import GestureSliderDemo from './components/GestureSlider/demo';
+import { OpacityCarouselDemo } from './components/Carousel/demo';
 
 
 ReactDOM.render(
@@ -17,6 +18,8 @@ ReactDOM.render(
         <FlipImageCardDemo />
 
         <GestureSliderDemo /> 
+
+        <OpacityCarouselDemo />
 
     </React.StrictMode>,
     document.getElementById('root')
