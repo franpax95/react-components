@@ -73,4 +73,6 @@ const StyledAv = styled(animated.div)`
     background-color: white;
 `;
 
+
+
 export { StyledGestureSlider, StyledItem, StyledFg, StyledAv };

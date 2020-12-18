@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import ChainAnimationDemo from './components/ChainAnimation/demo';
 import FlipCardDemo from './components/FlipCard/demo';
 import FlipImageCardDemo from './components/FlipImageCard/demo';
-import GestureSliderDemo from './components/GestureSlider/demo';
+import { GestureSliderDemo, InfiniteSliderDemo } from './components/Slider/demo';
 import { OpacityCarouselDemo } from './components/Carousel/demo';
 
 
@@ -13,13 +13,20 @@ ReactDOM.render(
     
         <ChainAnimationDemo />
 
-        <FlipCardDemo />
+        {/* <FlipCardDemo /> */}
 
-        <FlipImageCardDemo />
+        {/* <FlipImageCardDemo /> */}
 
         <GestureSliderDemo /> 
 
-        <OpacityCarouselDemo />
+        {/* <OpacityCarouselDemo /> */}
+
+        {/**
+        * IMPORTANT!!: InfiniteSlider only works for specific versions of the following packages
+        * @package react-spring: 9.0.0-rc.2
+        * @package react-use-gesture: 8.0.0-beta.1
+        */}
+        <InfiniteSliderDemo />
 
     </React.StrictMode>,
     document.getElementById('root')
