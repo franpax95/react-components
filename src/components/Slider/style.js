@@ -73,6 +73,34 @@ const StyledAv = styled(animated.div)`
     background-color: white;
 `;
 
+const StyledSimpleSlider = styled.div`
+    width: ${props => props.width};
+    height: ${props => props.height};
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
+    segoe ui, arial, sans-serif;
+`;
+
+const StyledSimpleSlide = styled(animated.div)`
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: ${props => props.bc};
+    color: white;
+
+    text-shadow: 0px 2px 40px #00000020, 0px 2px 5px #00000030;
+    font-weight: 800;
+    font-size: 25em;
+
+    will-change: transform, opacity;
+`;
 
 
-export { StyledGestureSlider, StyledItem, StyledFg, StyledAv };
+
+export { StyledGestureSlider, StyledItem, StyledFg, StyledAv, StyledSimpleSlider, StyledSimpleSlide };

@@ -1,5 +1,5 @@
-import React, { useRef, useCallback } from 'react';
-import { useSpring, interpolate } from 'react-spring';
+import React, { useState, useRef, useCallback } from 'react';
+import { useSpring, interpolate, useTransition } from 'react-spring';
 import { useGesture as useGestureWith } from 'react-with-gesture';
 
 import { useSprings, animated } from 'react-spring-rc';
@@ -7,7 +7,7 @@ import { useGesture } from 'react-use-gesture-beta';
 
 import { 
     StyledGestureSlider, StyledItem, StyledFg, StyledAv,
-
+    StyledSimpleSlider, StyledSimpleSlide
 } from './style';
 
 export function GestureSlider({
@@ -100,7 +100,7 @@ export function InfiniteSlider({
                 immediate: vy < 0 ? prevPosition > position : prevPosition < position,
                 config: {
                     tension: (1 + slides.length - configPos) * 100,
-                    friction: 30 + configPos * 40
+                    friction: 30 + configPos * 40 
                 }
             };
         });
@@ -126,5 +126,51 @@ export function InfiniteSlider({
                 <animated.div key={i} style={{ ...styles.item, width, x }} children={children(slides[i], i)} />
             ))}
         </div>
+    );
+}
+
+
+export function SimpleSlider({
+    width   =   '500px',
+    height  =   '500px',
+    slides  =   ['red', 'yellow', 'green']
+}) {
+    /** States */
+    const [index, set] = useState(0);
+
+    /** Springs */
+    const transitions = useTransition(index, p => p, {
+        from: {
+            opacity: 0,
+            transform: 'translate3d(100%, 0, 0)'
+        },
+        enter: {
+            opacity: 1,
+            transform: 'translate3d(0%, 0, 0)'
+        },
+        leave: {
+            opacity: 0,
+            transform: 'translate3d(-50%, 0, 0)'
+        }
+    });
+
+    /** Events */
+    const onClick = useCallback(() => {
+        set(state => (state + 1) % 3);
+    }, []);
+
+
+    return (
+        <StyledSimpleSlider onClick={onClick} height={height} width={width}>
+            {transitions.map(({ item, props, key }) => (
+                <StyledSimpleSlide 
+                    key={key}
+                    style={props} 
+                    bc={slides[item]}
+                >
+                    {item}
+                </StyledSimpleSlide>
+            ))}
+        </StyledSimpleSlider>
     );
 }

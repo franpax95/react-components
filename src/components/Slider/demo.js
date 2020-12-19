@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import { GestureSlider, InfiniteSlider } from './index';
+import { GestureSlider, InfiniteSlider, SimpleSlider } from './index';
 import items from './infiniteSliderData';
 import { animated } from 'react-spring';
 
@@ -130,6 +130,15 @@ export function InfiniteSliderDemo() {
                     </Content>
                 )}
             </InfiniteSlider>
+        </StyledSliderDemo>
+    </>);
+}
+
+export function SimpleSliderDemo() {
+    return (<>
+        <DemoGlobalStyle />
+        <StyledSliderDemo>
+            <SimpleSlider width={'80vw'} />
         </StyledSliderDemo>
     </>);
 }
