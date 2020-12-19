@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import FlipCard from './index';
+import { FlipCard, FlipImageCard } from './index';
 
 /**
  * Styles
@@ -45,6 +45,18 @@ const StyledCard = styled.div`
     color: ${props => props.color};
 `;
 
+const StyledFlipImageCardDemo = styled.div`
+    width: 100%;
+    height: 90%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    background-color: gray;
+`;
+
 
 /**
  * Front & Back cards
@@ -69,7 +81,7 @@ function Back() {
 /**
  * Main
  */
-function FlipCardDemo() {
+export function FlipCardDemo() {
     return(<>
         <DemoGlobalStyle />
         <StyledFlipCardDemo>
@@ -83,4 +95,11 @@ function FlipCardDemo() {
     </>);
 }
 
-export default FlipCardDemo;
+export function FlipImageCardDemo() {
+    return(<>
+        <DemoGlobalStyle />
+        <StyledFlipImageCardDemo>
+            <FlipImageCard />
+        </StyledFlipImageCardDemo>
+    </>);
+}

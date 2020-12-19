@@ -11,10 +11,13 @@ const StyledContainer = styled.div`
 const StyledCard = styled(animated.div)`
     width: 100%;
     height: 100%;
+
     position: absolute;
+
     cursor: pointer;
     background-size: cover;
     background-position: center center;
+    
     will-change: transform, opacity;
 `;
 

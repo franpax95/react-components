@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import ChainAnimationDemo from './components/ChainAnimation/demo';
-import FlipCardDemo from './components/FlipCard/demo';
-import FlipImageCardDemo from './components/FlipImageCard/demo';
+import { FlipCardDemo, FlipImageCardDemo } from './components/FlipCard/demo';
+// import FlipImageCardDemo from './components/FlipImageCard/demo';
 import { GestureSliderDemo, InfiniteSliderDemo, SimpleSliderDemo } from './components/Slider/demo';
 import { OpacityCarouselDemo } from './components/Carousel/demo';
 import { TextDisappearEffectDemo } from './components/Text/demo';
@@ -14,9 +14,9 @@ ReactDOM.render(
     
         {/* <ChainAnimationDemo /> */}
 
-        {/* <FlipCardDemo /> */}
+        <FlipCardDemo />
 
-        {/* <FlipImageCardDemo /> */}
+        <FlipImageCardDemo />
 
         {/* <GestureSliderDemo />  */}
 
