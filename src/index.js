@@ -6,6 +6,7 @@ import FlipCardDemo from './components/FlipCard/demo';
 import FlipImageCardDemo from './components/FlipImageCard/demo';
 import { GestureSliderDemo, InfiniteSliderDemo, SimpleSliderDemo } from './components/Slider/demo';
 import { OpacityCarouselDemo } from './components/Carousel/demo';
+import { TextDisappearEffectDemo } from './components/Text/demo';
 
 
 ReactDOM.render(
@@ -28,7 +29,9 @@ ReactDOM.render(
         */}
         {/* <InfiniteSliderDemo /> */}
 
-        <SimpleSliderDemo />
+        {/* <SimpleSliderDemo /> */}
+
+        <TextDisappearEffectDemo />
 
     </React.StrictMode>,
     document.getElementById('root')
