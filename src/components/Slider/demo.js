@@ -1,68 +1,11 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import { GestureSlider, InfiniteSlider, SimpleSlider } from './index';
 import items from './infiniteSliderData';
 import { animated } from 'react-spring';
 
 console.log(items);
 
-/**
- * Styles
- */
-const DemoGlobalStyle = createGlobalStyle`
-    * { 
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        user-select: none;
-    }
-
-    html,
-    body,
-    #root {
-        height: 100%;
-        width: 100%;
-    }
-`;
-
-const InfiniteSliderGlobalStyle = createGlobalStyle`
-    * {
-        box-sizing: border-box;
-    }
-
-    html,
-    body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
-
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial,
-            sans-serif;
-        background: transparent;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        cursor: default;
-        cursor: url("https://github.com/chenglou/react-motion/raw/master/demos/demo8-draggable-list/cursor.png") 39 39, auto;
-    }
-
-    #root {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        background: #171720;
-    }
-`;
 
 const StyledSliderDemo = styled.div`
     width: 100%;
@@ -75,6 +18,23 @@ const StyledSliderDemo = styled.div`
     overflow: hidden;
     background-color: whitesmoke;
 `;
+
+export function GestureSliderDemo() {
+    return(
+        <StyledSliderDemo>
+            <GestureSlider />
+        </StyledSliderDemo>
+    );
+}
+
+export function SimpleSliderDemo() {
+    return (
+        <StyledSliderDemo>
+            <SimpleSlider width={'80vw'} />
+        </StyledSliderDemo>
+    );
+}
+
 
 const Main = styled.div`
     height: 400px;
@@ -102,25 +62,12 @@ const Image = styled(animated.div)`
 `;
 
 /**
- * Main
- */
-export function GestureSliderDemo() {
-    return(<>
-        <DemoGlobalStyle />
-        <StyledSliderDemo>
-            <GestureSlider />
-        </StyledSliderDemo>
-    </>);
-}
-
-/**
  * IMPORTANT!!: InfiniteSlider only works for specific versions of the following packages
  * @package react-spring: 9.0.0-rc.2
  * @package react-use-gesture: 8.0.0-beta.1
  */
 export function InfiniteSliderDemo() {
-    return (<>
-        <DemoGlobalStyle />
+    return (
         <StyledSliderDemo>
             <InfiniteSlider slides={items} width={700} visible={4}>
                 {({ css, height }, i) => (
@@ -131,14 +78,5 @@ export function InfiniteSliderDemo() {
                 )}
             </InfiniteSlider>
         </StyledSliderDemo>
-    </>);
-}
-
-export function SimpleSliderDemo() {
-    return (<>
-        <DemoGlobalStyle />
-        <StyledSliderDemo>
-            <SimpleSlider width={'80vw'} />
-        </StyledSliderDemo>
-    </>);
+    );
 }

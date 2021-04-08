@@ -1,26 +1,10 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import { TextDisappearEffect } from './index';
 
 /**
  * Styles
  */
-const DemoGlobalStyle = createGlobalStyle`
-    * { 
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        user-select: none;
-    }
-
-    html,
-    body,
-    #root {
-        height: 100%;
-        width: 100%;
-    }
-`;
-
 const StyledTextDisappearEffectDemo = styled.div`
     width: 100%;
     height: 50vh;
@@ -37,8 +21,7 @@ const StyledTextDisappearEffectDemo = styled.div`
  * Main
  */
 export function TextDisappearEffectDemo() {
-    return(<>
-        <DemoGlobalStyle />
+    return(
         <StyledTextDisappearEffectDemo>
             <TextDisappearEffect 
                 text="Fran es un crack"
@@ -50,5 +33,5 @@ export function TextDisappearEffectDemo() {
                 letterEffect={false}
             />
         </StyledTextDisappearEffectDemo>
-    </>);
+    );
 }

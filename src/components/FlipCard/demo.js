@@ -1,26 +1,10 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import { FlipCard, FlipImageCard } from './index';
 
 /**
  * Styles
  */
-const DemoGlobalStyle = createGlobalStyle`
-    * { 
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        user-select: none;
-    }
-
-    html,
-    body,
-    #root {
-        height: 100%;
-        width: 100%;
-    }
-`;
-
 const StyledFlipCardDemo = styled.div`
     width: 100%;
     height: 100%;
@@ -82,8 +66,7 @@ function Back() {
  * Main
  */
 export function FlipCardDemo() {
-    return(<>
-        <DemoGlobalStyle />
+    return(
         <StyledFlipCardDemo>
             <FlipCard 
                 width = {'80%'}
@@ -92,14 +75,13 @@ export function FlipCardDemo() {
                 back = {<Back />}
             />
         </StyledFlipCardDemo>
-    </>);
+    );
 }
 
 export function FlipImageCardDemo() {
-    return(<>
-        <DemoGlobalStyle />
+    return(
         <StyledFlipImageCardDemo>
             <FlipImageCard />
         </StyledFlipImageCardDemo>
-    </>);
+    );
 }
